@@ -1,0 +1,12 @@
+R_DEF: Internal format may change without notice
+local
+id input
+id menu
+id send
+id tv_tag
+id tv_username
+layout activity_chat
+layout activity_main
+layout activity_personal
+layout item_friend
+string app_name

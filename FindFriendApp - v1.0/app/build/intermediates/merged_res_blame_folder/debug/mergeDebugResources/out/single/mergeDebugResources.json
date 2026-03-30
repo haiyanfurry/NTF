@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.yourname.findfriend.app-debug-31:/layout_activity_main.xml.flat",
+        "source": "com.yourname.findfriend.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.yourname.findfriend.app-debug-31:/layout_item_friend.xml.flat",
+        "source": "com.yourname.findfriend.app-main-33:/layout/item_friend.xml"
+    },
+    {
+        "merged": "com.yourname.findfriend.app-debug-31:/layout_activity_chat.xml.flat",
+        "source": "com.yourname.findfriend.app-main-33:/layout/activity_chat.xml"
+    },
+    {
+        "merged": "com.yourname.findfriend.app-debug-31:/layout_activity_personal.xml.flat",
+        "source": "com.yourname.findfriend.app-main-33:/layout/activity_personal.xml"
+    }
+]

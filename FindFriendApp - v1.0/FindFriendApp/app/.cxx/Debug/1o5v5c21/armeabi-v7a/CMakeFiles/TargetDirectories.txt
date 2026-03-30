@@ -1,0 +1,3 @@
+/home/haiyan/FindFriendApp/app/.cxx/Debug/1o5v5c21/armeabi-v7a/CMakeFiles/native-lib.dir
+/home/haiyan/FindFriendApp/app/.cxx/Debug/1o5v5c21/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/haiyan/FindFriendApp/app/.cxx/Debug/1o5v5c21/armeabi-v7a/CMakeFiles/rebuild_cache.dir

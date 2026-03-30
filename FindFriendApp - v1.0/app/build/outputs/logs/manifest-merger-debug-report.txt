@@ -1,0 +1,304 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:2:1-28:12
+MERGED from [com.google.android.material:material:1.11.0] /home/haiyan/.gradle/caches/9.4.0/transforms/303dcbc2c953a9294d49e42dc26b1a50/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/7394e661d0230bb2727b6910c0eb5ff0/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/haiyan/.gradle/caches/9.4.0/transforms/d90294dba5e26f322148bef86a1300bb/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/8200a8426a89ebb9717b69cfab244610/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/77b65ff271644d37ffb7d0532a2f0420/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] /home/haiyan/.gradle/caches/9.4.0/transforms/abe34c168eefea8321ac6a3c7786f67c/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.8.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7e6cce7a45d2dba680c8aa571788752d/transformed/jetified-activity-1.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7681fa4bdef4bf130f35ad154f2ec112/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/bd8e1725e1af827292a15200c385b60b/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/99798c5abadb173fd32493fd5f6440c0/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/a240ad5d178ea016260d530a144ae37e/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/ff06ea2a18e212399d3f342f3e0a27b9/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/a657dd05cdc38611fd90d544596960ba/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/be0d60034094bffdbd9aad6685ab19fe/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/29f2acb8c1f49a85da6546c805026ce5/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/d3744a74531835a7179e88f867937953/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/haiyan/.gradle/caches/9.4.0/transforms/a826d4c4c23fa82959fdb01253fa65c9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/b144724ac318b6ad487c85a8095b91c1/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/2cf65ded249b841f587bdb20295df2b0/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/cab621fb709d99d9499b1f3dd583e9aa/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/0391d7d020147aa2ec606ae51ef7b70a/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/7d872cd97e8fce66ba9990451161aec1/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/0d6b60f262ffcb49b8cc4878210deb8d/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7a243d5812eb2746eb14e48971a2e54c/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/1cac9e4094b636c0556bfcd924898604/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/185ba2e0d364a5aaae19e7519d23e1ff/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/725fb1b0e504583a4c81248d7581e57b/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/3b6961802718cf18f3f6f459a0b5c785/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7ddd7fd217ab83733608472aef198dcc/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/893385106f84be41b99226063de5f2dd/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/1ad866c049b483711d7f6d8f2fba5e10/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/1e5c459fc25e58a566bbd92c7b2dcd0b/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/bc53a70d87447682a6bb083170145740/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/85b54dce84ef53038ecf7d7bd266e095/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/542e61fb2c18f90ffadfc3952ba7a900/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/115eb0ea81e002a7b5f226035d4ae923/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/58ce213c8a8c9402fac0606bccec9693/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/0759cd450b524c8bca78185eebbfd05e/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:7:22-78
+application
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:9:5-26:19
+INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:9:5-26:19
+MERGED from [com.google.android.material:material:1.11.0] /home/haiyan/.gradle/caches/9.4.0/transforms/303dcbc2c953a9294d49e42dc26b1a50/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.11.0] /home/haiyan/.gradle/caches/9.4.0/transforms/303dcbc2c953a9294d49e42dc26b1a50/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/haiyan/.gradle/caches/9.4.0/transforms/d90294dba5e26f322148bef86a1300bb/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/haiyan/.gradle/caches/9.4.0/transforms/d90294dba5e26f322148bef86a1300bb/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/b144724ac318b6ad487c85a8095b91c1/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/b144724ac318b6ad487c85a8095b91c1/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/893385106f84be41b99226063de5f2dd/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/893385106f84be41b99226063de5f2dd/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/1ad866c049b483711d7f6d8f2fba5e10/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/1ad866c049b483711d7f6d8f2fba5e10/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:12:9-35
+	android:label
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:11:9-29
+	tools:targetApi
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:13:9-29
+	android:allowBackup
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:10:9-35
+activity#com.yourname.findfriend.MainActivity
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:15:9-22:20
+	android:exported
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:17:13-36
+	android:name
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:16:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:18:13-21:29
+action#android.intent.action.MAIN
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:20:27-74
+activity#com.yourname.findfriend.ChatActivity
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:24:9-50
+	android:name
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:24:19-47
+activity#com.yourname.findfriend.PersonalActivity
+ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:25:9-54
+	android:name
+		ADDED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml:25:19-51
+uses-sdk
+INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml
+INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.11.0] /home/haiyan/.gradle/caches/9.4.0/transforms/303dcbc2c953a9294d49e42dc26b1a50/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.11.0] /home/haiyan/.gradle/caches/9.4.0/transforms/303dcbc2c953a9294d49e42dc26b1a50/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/7394e661d0230bb2727b6910c0eb5ff0/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/7394e661d0230bb2727b6910c0eb5ff0/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/haiyan/.gradle/caches/9.4.0/transforms/d90294dba5e26f322148bef86a1300bb/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/haiyan/.gradle/caches/9.4.0/transforms/d90294dba5e26f322148bef86a1300bb/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/8200a8426a89ebb9717b69cfab244610/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/8200a8426a89ebb9717b69cfab244610/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/77b65ff271644d37ffb7d0532a2f0420/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/77b65ff271644d37ffb7d0532a2f0420/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /home/haiyan/.gradle/caches/9.4.0/transforms/abe34c168eefea8321ac6a3c7786f67c/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /home/haiyan/.gradle/caches/9.4.0/transforms/abe34c168eefea8321ac6a3c7786f67c/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.8.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7e6cce7a45d2dba680c8aa571788752d/transformed/jetified-activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7e6cce7a45d2dba680c8aa571788752d/transformed/jetified-activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7681fa4bdef4bf130f35ad154f2ec112/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7681fa4bdef4bf130f35ad154f2ec112/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/bd8e1725e1af827292a15200c385b60b/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/bd8e1725e1af827292a15200c385b60b/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/99798c5abadb173fd32493fd5f6440c0/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/99798c5abadb173fd32493fd5f6440c0/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/a240ad5d178ea016260d530a144ae37e/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/a240ad5d178ea016260d530a144ae37e/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/ff06ea2a18e212399d3f342f3e0a27b9/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/ff06ea2a18e212399d3f342f3e0a27b9/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/a657dd05cdc38611fd90d544596960ba/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/a657dd05cdc38611fd90d544596960ba/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/be0d60034094bffdbd9aad6685ab19fe/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/be0d60034094bffdbd9aad6685ab19fe/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/29f2acb8c1f49a85da6546c805026ce5/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/29f2acb8c1f49a85da6546c805026ce5/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/d3744a74531835a7179e88f867937953/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/d3744a74531835a7179e88f867937953/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/haiyan/.gradle/caches/9.4.0/transforms/a826d4c4c23fa82959fdb01253fa65c9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/haiyan/.gradle/caches/9.4.0/transforms/a826d4c4c23fa82959fdb01253fa65c9/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/b144724ac318b6ad487c85a8095b91c1/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/b144724ac318b6ad487c85a8095b91c1/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/2cf65ded249b841f587bdb20295df2b0/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/2cf65ded249b841f587bdb20295df2b0/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/cab621fb709d99d9499b1f3dd583e9aa/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/cab621fb709d99d9499b1f3dd583e9aa/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/0391d7d020147aa2ec606ae51ef7b70a/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/0391d7d020147aa2ec606ae51ef7b70a/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/7d872cd97e8fce66ba9990451161aec1/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/7d872cd97e8fce66ba9990451161aec1/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/0d6b60f262ffcb49b8cc4878210deb8d/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/0d6b60f262ffcb49b8cc4878210deb8d/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7a243d5812eb2746eb14e48971a2e54c/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7a243d5812eb2746eb14e48971a2e54c/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/1cac9e4094b636c0556bfcd924898604/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/1cac9e4094b636c0556bfcd924898604/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/185ba2e0d364a5aaae19e7519d23e1ff/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/185ba2e0d364a5aaae19e7519d23e1ff/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/725fb1b0e504583a4c81248d7581e57b/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/haiyan/.gradle/caches/9.4.0/transforms/725fb1b0e504583a4c81248d7581e57b/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/3b6961802718cf18f3f6f459a0b5c785/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/3b6961802718cf18f3f6f459a0b5c785/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7ddd7fd217ab83733608472aef198dcc/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/7ddd7fd217ab83733608472aef198dcc/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/893385106f84be41b99226063de5f2dd/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/893385106f84be41b99226063de5f2dd/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/1ad866c049b483711d7f6d8f2fba5e10/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/1ad866c049b483711d7f6d8f2fba5e10/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/1e5c459fc25e58a566bbd92c7b2dcd0b/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/1e5c459fc25e58a566bbd92c7b2dcd0b/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/bc53a70d87447682a6bb083170145740/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/bc53a70d87447682a6bb083170145740/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/85b54dce84ef53038ecf7d7bd266e095/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/85b54dce84ef53038ecf7d7bd266e095/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/542e61fb2c18f90ffadfc3952ba7a900/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/542e61fb2c18f90ffadfc3952ba7a900/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/115eb0ea81e002a7b5f226035d4ae923/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/115eb0ea81e002a7b5f226035d4ae923/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/58ce213c8a8c9402fac0606bccec9693/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/haiyan/.gradle/caches/9.4.0/transforms/58ce213c8a8c9402fac0606bccec9693/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/0759cd450b524c8bca78185eebbfd05e/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/0759cd450b524c8bca78185eebbfd05e/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/haiyan/FindFriendApp/app/src/main/AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/b144724ac318b6ad487c85a8095b91c1/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/b144724ac318b6ad487c85a8095b91c1/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/1ad866c049b483711d7f6d8f2fba5e10/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/haiyan/.gradle/caches/9.4.0/transforms/1ad866c049b483711d7f6d8f2fba5e10/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/haiyan/.gradle/caches/9.4.0/transforms/6bfb680803a253db01b16ce7473d43ea/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/b144724ac318b6ad487c85a8095b91c1/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/b144724ac318b6ad487c85a8095b91c1/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/haiyan/.gradle/caches/9.4.0/transforms/b144724ac318b6ad487c85a8095b91c1/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+permission#com.yourname.findfriend.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+uses-permission#com.yourname.findfriend.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/haiyan/.gradle/caches/9.4.0/transforms/817840ae868408ee27af06887ff37e97/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/haiyan/.gradle/caches/9.4.0/transforms/236fce103e42eff378432d2951d627c2/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92

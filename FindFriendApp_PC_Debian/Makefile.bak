@@ -1,0 +1,38 @@
+# ~/汇总/FindFriendApp_PC_Debian/Makefile
+
+CC = gcc
+CFLAGS = -Wall -g `pkg-config --cflags gtk+-3.0 webkit2gtk-4.0`
+LIBS = `pkg-config --libs gtk+-3.0 webkit2gtk-4.0` -lssl -lcrypto -lsodium
+
+SRC_DIR = src
+BUILD_DIR = build
+
+SOURCES = $(wildcard $(SRC_DIR)/App/*.c) \
+          $(wildcard $(SRC_DIR)/Core/*.c) \
+          $(wildcard $(SRC_DIR)/Pages/*.c)
+          
+OBJECTS = $(SOURCES:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
+
+TARGET = FindFriendApp
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	$(CC) $^ -o $@ $(LIBS)
+
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -rf $(BUILD_DIR) $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)
+
+install:
+	cp $(TARGET) /usr/local/bin/
+	mkdir -p /usr/share/findfriend
+	cp -r Resources/* /usr/share/findfriend/
+
+.PHONY: all clean run install

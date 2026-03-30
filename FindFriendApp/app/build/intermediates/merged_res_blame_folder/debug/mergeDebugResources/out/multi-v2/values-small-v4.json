@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.yourname.findfriend.app-mergeDebugResources-29:/values-small-v4/values-small-v4.xml",
+            "map": [
+                {
+                    "source": "/home/haiyan/.gradle/caches/9.4.0/transforms/303dcbc2c953a9294d49e42dc26b1a50/transformed/material-1.11.0/res/values-small-v4/values-small-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,128,198,270",
+                        "endColumns": "72,69,71,69",
+                        "endOffsets": "123,193,265,335"
+                    }
+                }
+            ]
+        }
+    ]
+}

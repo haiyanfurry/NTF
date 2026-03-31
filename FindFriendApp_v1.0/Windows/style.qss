@@ -1,0 +1,160 @@
+/* 主窗口样式 */
+QMainWindow {
+    background-color: #f0f0f0;
+}
+
+/* 按钮样式 */
+QPushButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+}
+
+QPushButton:pressed {
+    background-color: #3e8e41;
+}
+
+/* 输入框样式 */
+QLineEdit {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+QLineEdit:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 标签样式 */
+QLabel {
+    font-size: 14px;
+    color: #333;
+}
+
+/* 列表视图样式 */
+QListView {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+/* 表格样式 */
+QTableWidget {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+QTableWidget::item {
+    padding: 8px;
+}
+
+QTableWidget::item:selected {
+    background-color: #e3f2fd;
+}
+
+/* 标签页样式 */
+QTabWidget::pane {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+QTabBar::tab {
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+QTabBar::tab:selected {
+    background-color: white;
+    border-color: #ddd;
+    border-bottom: 1px solid white;
+}
+
+/* 对话框样式 */
+QDialog {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 滚动条样式 */
+QScrollBar:vertical {
+    background-color: #f0f0f0;
+    width: 10px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #555;
+}
+
+QScrollBar:horizontal {
+    background-color: #f0f0f0;
+    height: 10px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: #555;
+}
+
+/* 商家仪表盘样式 */
+QWidget#MerchantDashboard {
+    background-color: white;
+    padding: 20px;
+}
+
+/* 统计卡片样式 */
+QWidget#StatCard {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+}
+
+/* 产品管理样式 */
+QWidget#ProductManagement {
+    background-color: white;
+    padding: 20px;
+}
+
+/* 订单管理样式 */
+QWidget#OrderManagement {
+    background-color: white;
+    padding: 20px;
+}
+
+/* 客户管理样式 */
+QWidget#CustomerManagement {
+    background-color: white;
+    padding: 20px;
+}

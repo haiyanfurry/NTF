@@ -1,0 +1,193 @@
+/* 深色主题 - 福瑞风格 */
+QMainWindow, QDialog {
+    background-color: #1a1a1a;
+}
+
+QWidget {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: "WenQuanYi Micro Hei", "Noto Sans CJK SC", sans-serif;
+    font-size: 12px;
+}
+
+QMenuBar {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+QMenuBar::item:selected {
+    background-color: #ff9800;
+    color: #1a1a1a;
+}
+
+QMenu {
+    background-color: #2d2d2d;
+    border: 1px solid #3d3d3d;
+}
+
+QMenu::item:selected {
+    background-color: #ff9800;
+    color: #1a1a1a;
+}
+
+QPushButton {
+    background-color: #ff9800;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #ffb74d;
+}
+
+QPushButton:pressed {
+    background-color: #f57c00;
+}
+
+QPushButton:disabled {
+    background-color: #555;
+    color: #888;
+}
+
+QLineEdit, QTextEdit, QPlainTextEdit {
+    background-color: #2d2d2d;
+    border: 1px solid #3d3d3d;
+    border-radius: 6px;
+    padding: 8px;
+    color: #e0e0e0;
+}
+
+QLineEdit:focus, QTextEdit:focus {
+    border-color: #ff9800;
+}
+
+QListWidget {
+    background-color: #2d2d2d;
+    border: none;
+    outline: none;
+}
+
+QListWidget::item {
+    padding: 10px;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+QListWidget::item:hover {
+    background-color: #3d3d3d;
+}
+
+QListWidget::item:selected {
+    background-color: #ff9800;
+    color: #1a1a1a;
+}
+
+QScrollBar:vertical {
+    background-color: #2d2d2d;
+    width: 10px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #ff9800;
+    border-radius: 5px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #ffb74d;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QTabWidget::pane {
+    border: 1px solid #3d3d3d;
+    background-color: #1a1a1a;
+}
+
+QTabBar::tab {
+    background-color: #2d2d2d;
+    padding: 8px 16px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background-color: #ff9800;
+    color: #1a1a1a;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #3d3d3d;
+}
+
+QGroupBox {
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    margin-top: 12px;
+    padding-top: 12px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 12px;
+    padding: 0 8px;
+    color: #ff9800;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 1px solid #3d3d3d;
+    background-color: #2d2d2d;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff9800;
+    border-color: #ff9800;
+}
+
+QSlider::groove:horizontal {
+    height: 4px;
+    background-color: #3d3d3d;
+    border-radius: 2px;
+}
+
+QSlider::handle:horizontal {
+    background-color: #ff9800;
+    width: 16px;
+    height: 16px;
+    margin: -6px 0;
+    border-radius: 8px;
+}
+
+QSlider::handle:horizontal:hover {
+    background-color: #ffb74d;
+}
+
+QProgressBar {
+    border: 1px solid #3d3d3d;
+    border-radius: 4px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #ff9800;
+    border-radius: 3px;
+}
+
+QToolTip {
+    background-color: #2d2d2d;
+    color: #ff9800;
+    border: 1px solid #ff9800;
+}
+
+/* 动画效果 */
+QWidget {
+    transition: all 0.2s ease-in-out;
+}

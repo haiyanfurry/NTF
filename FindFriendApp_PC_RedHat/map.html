@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FindFriend Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body { margin:0; padding:0; background:#1a1a1a; }
+        #map { height:100vh; width:100%; }
+        .custom-marker {
+            width:44px; height:44px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            font-size:26px; cursor:pointer; transition:transform 0.2s;
+            box-shadow:0 2px 8px rgba(0,0,0,0.3);
+            border:2px solid white;
+        }
+        .custom-marker:hover { transform:scale(1.15); }
+        .furry-marker { background:linear-gradient(135deg,#ff9800,#f57c00); }
+        .anime-marker { background:linear-gradient(135deg,#e91e63,#c2185b); }
+        .cos-marker { background:linear-gradient(135deg,#9c27b0,#7b1fa2); }
+        .info-window {
+            background:#2d2d2d; color:#e0e0e0; border-radius:12px;
+            padding:12px; min-width:180px; border-left:4px solid #ff9800;
+        }
+        .info-window h4 { margin:0 0 5px; color:#ff9800; }
+        .info-window p { margin:5px 0; font-size:12px; color:#aaa; }
+        .info-window button {
+            background:#ff9800; border:none; padding:6px 16px;
+            border-radius:20px; cursor:pointer; margin-top:8px;
+            font-weight:bold; color:#1a1a1a;
+        }
+        .legend {
+            position:absolute; bottom:20px; right:20px;
+            background:rgba(45,45,45,0.95); padding:12px; border-radius:12px;
+            font-size:12px; backdrop-filter:blur(4px);
+        }
+        .legend span { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:6px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div class="legend">
+        <div><span style="background:#ff9800"></span> 福瑞</div>
+        <div><span style="background:#e91e63"></span> 二次元</div>
+        <div><span style="background:#9c27b0"></span> COS</div>
+    </div>
+    <script>
+        var map = L.map('map').setView([39.9042,116.4074],10);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+            attribution:'© OpenStreetMap', subdomains:'abcd'
+        }).addTo(map);
+        var markers = {};
+        function getMarkerColor(tags) {
+            if(tags&1) return 'furry-marker';
+            if(tags&2) return 'anime-marker';
+            if(tags&4) return 'cos-marker';
+            return 'furry-marker';
+        }
+        function getEmoji(tags) {
+            if(tags&1) return '🐺';
+            if(tags&2) return '🦊';
+            if(tags&4) return '🎭';
+            return '🐾';
+        }
+        function calculateDistance(lat1,lon1,lat2,lon2) {
+            var R = 6371;
+            var dLat = (lat2-lat1)*Math.PI/180;
+            var dLon = (lon2-lon1)*Math.PI/180;
+            var a = Math.sin(dLat/2)*Math.sin(dLat/2) +
+                    Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*
+                    Math.sin(dLon/2)*Math.sin(dLon/2);
+            var c = 2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+            return R*c;
+        }
+        function updateUserOnMap(user) {
+            if(markers[user.id]) {
+                markers[user.id].setLatLng([user.lat,user.lng]);
+            } else {
+                var cls = getMarkerColor(user.tags);
+                var emoji = getEmoji(user.tags);
+                var icon = L.divIcon({
+                    className:'custom-marker '+cls,
+                    html:'<span>'+emoji+'</span>',
+                    iconSize:[44,44], popupAnchor:[0,-22]
+                });
+                var center = map.getCenter();
+                var dist = calculateDistance(center.lat,center.lng,user.lat,user.lng);
+                markers[user.id] = L.marker([user.lat,user.lng],{icon:icon})
+                    .addTo(map)
+                    .bindPopup(
+                        '<div class="info-window"><h4>'+user.name+'</h4>'+
+                        '<p>'+user.sig+'</p>'+
+                        '<p class="distance">📍 距离 '+dist.toFixed(1)+' km</p>'+
+                        '<button onclick="window.startChat('+user.id+')">💬 添加好友</button>'+
+                        '</div>'
+                    );
+            }
+        }
+        function clearAllMarkers() {
+            for(var id in markers) map.removeLayer(markers[id]);
+            markers = {};
+        }
+        window.updateNearbyUsers = function(usersJson) {
+            clearAllMarkers();
+            try {
+                var list = JSON.parse(usersJson);
+                for(var i=0;i<list.length;i++) updateUserOnMap(list[i]);
+            } catch(e) { console.log(e); }
+        };
+        window.startChat = function(userId) {
+            if(window.qt && window.qt.startChat) window.qt.startChat(userId);
+        };
+        window.setMapCenter = function(lat,lng,zoom) {
+            map.setView([lat,lng],zoom);
+        };
+        map.on('zoomend',function() {
+            if(window.qt && window.qt.onZoomChanged) window.qt.onZoomChanged(map.getZoom());
+        });
+    </script>
+</body>
+</html>

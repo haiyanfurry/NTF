@@ -1,0 +1,415 @@
+#include "MainWindow.h"
+#include "../models/User.h"
+#include "../models/Message.h"
+#include "../models/Exhibition.h"
+#include "../network/MediaTransfer.h"
+#include <gtk/gtk.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+static GtkWidget *main_window;
+static GtkWidget *notebook;
+static User current_user;
+static int is_logged_in = 0;
+
+// 登录对话框
+void show_login_dialog(void) {
+    GtkWidget *dialog = gtk_dialog_new_with_buttons(
+        "登录", GTK_WINDOW(main_window),
+        GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+        "取消", GTK_RESPONSE_CANCEL,
+        "登录", GTK_RESPONSE_OK,
+        NULL
+    );
+    gtk_window_set_default_size(GTK_WINDOW(dialog), 350, 200);
+    
+    GtkWidget *content = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
+    gtk_container_set_border_width(GTK_CONTAINER(content), 20);
+    
+    // 用户名
+    GtkWidget *user_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 10);
+    GtkWidget *user_label = gtk_label_new("用户名:");
+    GtkWidget *user_entry = gtk_entry_new();
+    gtk_entry_set_placeholder_text(GTK_ENTRY(user_entry), "输入用户名");
+    gtk_box_pack_start(GTK_BOX(user_box), user_label, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(user_box), user_entry, TRUE, TRUE, 0);
+    
+    // 密码
+    GtkWidget *pass_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 10);
+    GtkWidget *pass_label = gtk_label_new("密码:");
+    GtkWidget *pass_entry = gtk_entry_new();
+    gtk_entry_set_visibility(GTK_ENTRY(pass_entry), FALSE);
+    gtk_entry_set_placeholder_text(GTK_ENTRY(pass_entry), "输入密码");
+    gtk_box_pack_start(GTK_BOX(pass_box), pass_label, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(pass_box), pass_entry, TRUE, TRUE, 0);
+    
+    gtk_box_pack_start(GTK_BOX(content), user_box, FALSE, FALSE, 10);
+    gtk_box_pack_start(GTK_BOX(content), pass_box, FALSE, FALSE, 10);
+    
+    gtk_widget_show_all(content);
+    
+    int result = gtk_dialog_run(GTK_DIALOG(dialog));
+    if (result == GTK_RESPONSE_OK) {
+        const char *username = gtk_entry_get_text(GTK_ENTRY(user_entry));
+        if (strlen(username) > 0) {
+            strncpy(current_user.username, username, 63);
+            current_user.id = rand() % 10000 + 10000;
+            is_logged_in = 1;
+            if (notebook) {
+                gtk_widget_set_sensitive(notebook, TRUE);
+            }
+        }
+    }
+    gtk_widget_destroy(dialog);
+}
+
+// 展会面板
+static GtkWidget* create_exhibition_panel(void) {
+    GtkWidget *vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
+    gtk_container_set_border_width(GTK_CONTAINER(vbox), 15);
+    
+    GtkWidget *title = gtk_label_new(NULL);
+    gtk_label_set_markup(GTK_LABEL(title), 
+        "<span size='x-large' weight='bold'>🎪 展会与活动</span>");
+    gtk_widget_set_halign(title, GTK_ALIGN_START);
+    
+    GtkWidget *scrolled = gtk_scrolled_window_new(NULL, NULL);
+    gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+    GtkWidget *list_box = gtk_list_box_new();
+    
+    const char *exhibitions[][5] = {
+        {"COMICUP 30", "上海新国际博览中心", "2024-12-15", "🎫 票务紧张", "官方"},
+        {"Furry 冬日祭", "北京国家会议中心", "2024-12-22", "🎫 热卖中", "官方"},
+        {"Bilibili World", "广州保利世贸", "2025-01-05", "🎫 预售", "官方"},
+        {"同人创作展", "杭州国际博览中心", "2025-01-12", "📝 征稿中", "合作"}
+    };
+    
+    for (int i = 0; i < 4; i++) {
+        GtkWidget *row = gtk_list_box_row_new();
+        GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 15);
+        gtk_widget_set_margin_start(hbox, 15);
+        gtk_widget_set_margin_end(hbox, 15);
+        gtk_widget_set_margin_top(hbox, 15);
+        gtk_widget_set_margin_bottom(hbox, 15);
+        
+        GtkWidget *icon = gtk_label_new("🏢");
+        gtk_widget_set_size_request(icon, 50, 50);
+        
+        GtkWidget *info = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+        GtkWidget *name = gtk_label_new(NULL);
+        char name_markup[256];
+        snprintf(name_markup, sizeof(name_markup), 
+            "<b><span size='large'>%s</span></b>\n<span size='small'>%s</span>",
+            exhibitions[i][0], exhibitions[i][1]);
+        gtk_label_set_markup(GTK_LABEL(name), name_markup);
+        gtk_widget_set_halign(name, GTK_ALIGN_START);
+        
+        GtkWidget *details = gtk_label_new(NULL);
+        char details_markup[256];
+        snprintf(details_markup, sizeof(details_markup), 
+            "📅 %s\n%s", exhibitions[i][2], exhibitions[i][3]);
+        gtk_label_set_markup(GTK_LABEL(details), details_markup);
+        gtk_widget_set_halign(details, GTK_ALIGN_START);
+        
+        GtkWidget *buy_btn = gtk_button_new_with_label("查看详情");
+        
+        gtk_box_pack_start(GTK_BOX(info), name, FALSE, FALSE, 0);
+        gtk_box_pack_start(GTK_BOX(info), details, FALSE, FALSE, 0);
+        
+        gtk_box_pack_start(GTK_BOX(hbox), icon, FALSE, FALSE, 0);
+        gtk_box_pack_start(GTK_BOX(hbox), info, TRUE, TRUE, 0);
+        gtk_box_pack_start(GTK_BOX(hbox), buy_btn, FALSE, FALSE, 0);
+        
+        gtk_container_add(GTK_CONTAINER(row), hbox);
+        gtk_list_box_insert(GTK_LIST_BOX(list_box), row, -1);
+    }
+    
+    gtk_container_add(GTK_CONTAINER(scrolled), list_box);
+    gtk_box_pack_start(GTK_BOX(vbox), title, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), scrolled, TRUE, TRUE, 0);
+    
+    return vbox;
+}
+
+// 票务面板
+static GtkWidget* create_ticket_panel(void) {
+    GtkWidget *vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
+    gtk_container_set_border_width(GTK_CONTAINER(vbox), 15);
+    
+    GtkWidget *title = gtk_label_new(NULL);
+    gtk_label_set_markup(GTK_LABEL(title), 
+        "<span size='x-large' weight='bold'>🎫 我的票务</span>");
+    gtk_widget_set_halign(title, GTK_ALIGN_START);
+    
+    GtkWidget *list_box = gtk_list_box_new();
+    
+    GtkWidget *row = gtk_list_box_row_new();
+    GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 15);
+    gtk_widget_set_margin_start(hbox, 15);
+    gtk_widget_set_margin_end(hbox, 15);
+    gtk_widget_set_margin_top(hbox, 15);
+    gtk_widget_set_margin_bottom(hbox, 15);
+    
+    GtkWidget *icon = gtk_label_new("🎟️");
+    GtkWidget *info = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+    GtkWidget *name = gtk_label_new(NULL);
+    gtk_label_set_markup(GTK_LABEL(name), 
+        "<b>COMICUP 30 普通票</b>\n<span size='small'>2024-12-15 上海新国际博览中心</span>");
+    gtk_widget_set_halign(name, GTK_ALIGN_START);
+    
+    GtkWidget *status = gtk_label_new(NULL);
+    gtk_label_set_markup(GTK_LABEL(status), 
+        "<span foreground='#4caf50'>✓ 已支付 | 待使用</span>");
+    
+    GtkWidget *code_btn = gtk_button_new_with_label("生成入场码");
+    
+    gtk_box_pack_start(GTK_BOX(info), name, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(info), status, FALSE, FALSE, 0);
+    
+    gtk_box_pack_start(GTK_BOX(hbox), icon, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(hbox), info, TRUE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(hbox), code_btn, FALSE, FALSE, 0);
+    
+    gtk_container_add(GTK_CONTAINER(row), hbox);
+    gtk_list_box_insert(GTK_LIST_BOX(list_box), row, -1);
+    
+    gtk_box_pack_start(GTK_BOX(vbox), title, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), list_box, TRUE, TRUE, 0);
+    
+    return vbox;
+}
+
+// 交易面板
+static GtkWidget* create_transaction_panel(void) {
+    GtkWidget *vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
+    gtk_container_set_border_width(GTK_CONTAINER(vbox), 15);
+    
+    GtkWidget *title_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 10);
+    GtkWidget *title = gtk_label_new(NULL);
+    gtk_label_set_markup(GTK_LABEL(title), 
+        "<span size='x-large' weight='bold'>💰 交易市场</span>");
+    GtkWidget *post_btn = gtk_button_new_with_label("+ 发布稿件");
+    gtk_box_pack_start(GTK_BOX(title_box), title, TRUE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(title_box), post_btn, FALSE, FALSE, 0);
+    
+    GtkWidget *tabs = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
+    GtkWidget *btn_all = gtk_button_new_with_label("全部");
+    GtkWidget *btn_art = gtk_button_new_with_label("稿件");
+    GtkWidget *btn_ticket = gtk_button_new_with_label("门票");
+    GtkWidget *btn_goods = gtk_button_new_with_label("周边");
+    
+    gtk_box_pack_start(GTK_BOX(tabs), btn_all, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(tabs), btn_art, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(tabs), btn_ticket, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(tabs), btn_goods, FALSE, FALSE, 0);
+    
+    GtkWidget *scrolled = gtk_scrolled_window_new(NULL, NULL);
+    GtkWidget *list_box = gtk_list_box_new();
+    
+    const char *transactions[][5] = {
+        {"🎨", "福瑞插画约稿", "狼仔", "¥200", "待审核"},
+        {"🎫", "COMICUP 30 门票", "狐酱", "¥80", "已上架"},
+        {"🧸", "手工毛绒公仔", "喵喵", "¥150", "已售出"},
+        {"📖", "原创漫画本", "龙龙", "¥45", "已上架"}
+    };
+    
+    for (int i = 0; i < 4; i++) {
+        GtkWidget *row = gtk_list_box_row_new();
+        GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
+        gtk_widget_set_margin_start(hbox, 12);
+        gtk_widget_set_margin_end(hbox, 12);
+        gtk_widget_set_margin_top(hbox, 12);
+        gtk_widget_set_margin_bottom(hbox, 12);
+        
+        GtkWidget *icon = gtk_label_new(transactions[i][0]);
+        GtkWidget *info = gtk_box_new(GTK_ORIENTATION_VERTICAL, 3);
+        GtkWidget *name = gtk_label_new(NULL);
+        char name_markup[256];
+        snprintf(name_markup, sizeof(name_markup), 
+            "<b>%s</b>\n<span size='small'>卖家: %s</span>",
+            transactions[i][1], transactions[i][2]);
+        gtk_label_set_markup(GTK_LABEL(name), name_markup);
+        gtk_widget_set_halign(name, GTK_ALIGN_START);
+        
+        GtkWidget *price = gtk_label_new(NULL);
+        char price_markup[64];
+        snprintf(price_markup, sizeof(price_markup), 
+            "<span foreground='#ff9800'>%s</span>", transactions[i][3]);
+        gtk_label_set_markup(GTK_LABEL(price), price_markup);
+        
+        GtkWidget *status_btn = gtk_button_new_with_label(transactions[i][4]);
+        
+        gtk_box_pack_start(GTK_BOX(info), name, FALSE, FALSE, 0);
+        gtk_box_pack_start(GTK_BOX(info), price, FALSE, FALSE, 0);
+        
+        gtk_box_pack_start(GTK_BOX(hbox), icon, FALSE, FALSE, 0);
+        gtk_box_pack_start(GTK_BOX(hbox), info, TRUE, TRUE, 0);
+        gtk_box_pack_start(GTK_BOX(hbox), status_btn, FALSE, FALSE, 0);
+        
+        gtk_container_add(GTK_CONTAINER(row), hbox);
+        gtk_list_box_insert(GTK_LIST_BOX(list_box), row, -1);
+    }
+    
+    gtk_container_add(GTK_CONTAINER(scrolled), list_box);
+    
+    gtk_box_pack_start(GTK_BOX(vbox), title_box, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), tabs, FALSE, FALSE, 10);
+    gtk_box_pack_start(GTK_BOX(vbox), scrolled, TRUE, TRUE, 0);
+    
+    return vbox;
+}
+
+// 相册视图
+static GtkWidget* create_gallery_view(void) {
+    GtkWidget *vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
+    gtk_container_set_border_width(GTK_CONTAINER(vbox), 15);
+    
+    GtkWidget *toolbar = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 10);
+    GtkWidget *select_btn = gtk_button_new_with_label("📷 选择照片");
+    GtkWidget *send_btn = gtk_button_new_with_label("📤 发送");
+    GtkWidget *album_btn = gtk_button_new_with_label("📁 相册");
+    
+    gtk_box_pack_start(GTK_BOX(toolbar), select_btn, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(toolbar), send_btn, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(toolbar), album_btn, FALSE, FALSE, 0);
+    
+    GtkWidget *grid = gtk_grid_new();
+    gtk_grid_set_row_spacing(GTK_GRID(grid), 5);
+    gtk_grid_set_column_spacing(GTK_GRID(grid), 5);
+    
+    GtkWidget *scrolled = gtk_scrolled_window_new(NULL, NULL);
+    gtk_container_add(GTK_CONTAINER(scrolled), grid);
+    
+    const char *photos[] = {"📸", "🎨", "🐺", "🦊", "🐱", "🐉"};
+    for (int i = 0; i < 6; i++) {
+        GtkWidget *photo_box = gtk_event_box_new();
+        gtk_widget_set_size_request(photo_box, 100, 100);
+        GtkWidget *label = gtk_label_new(NULL);
+        char label_markup[32];
+        snprintf(label_markup, sizeof(label_markup), 
+            "<span size=.xx-large.>%s</spann>", photos[i]);
+        gtk_label_set_markup(GTK_LABEL(label), label_markup);
+        gtk_container_add(GTK_CONTAINER(photo_box), label);
+        gtk_grid_attach(GTK_GRID(grid), photo_box, i % 3, i / 3, 1, 1);
+    }
+    
+    GtkWidget *progress = gtk_progress_bar_new();
+    gtk_progress_bar_set_text(GTK_PROGRESS_BAR(progress), "传输进度");
+    
+    gtk_box_pack_start(GTK_BOX(vbox), toolbar, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), scrolled, TRUE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), progress, FALSE, FALSE, 10);
+    
+    return vbox;
+}
+
+// 消息视图
+static GtkWidget* create_message_view(void) {
+    GtkWidget *vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    
+    GtkWidget *toolbar = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
+    gtk_widget_set_margin_start(toolbar, 10);
+    gtk_widget_set_margin_end(toolbar, 10);
+    gtk_widget_set_margin_top(toolbar, 10);
+    
+    GtkWidget *settings_btn = gtk_button_new_with_label("⚙️ 消息设置");
+    gtk_box_pack_end(GTK_BOX(toolbar), settings_btn, FALSE, FALSE, 0);
+    
+    GtkWidget *list_box = gtk_list_box_new();
+    
+    const char *msgs[][4] = {
+        {"⭐", "官方公告", "COMICUP 30 即将开始，请准备好入场码", "10:30"},
+        {"🐺", "狼仔", "明天一起去漫展吗？", "09:15"},
+        {"🏢", "展会助手", "您的门票已出票，点击查看详情", "昨天"},
+        {"🎨", "画师圈", "群内发布了新的约稿信息", "昨天"}
+    };
+    
+    for (int i = 0; i < 4; i++) {
+        GtkWidget *row = gtk_list_box_row_new();
+        GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
+        gtk_widget_set_margin_start(hbox, 12);
+        gtk_widget_set_margin_end(hbox, 12);
+        gtk_widget_set_margin_top(hbox, 12);
+        gtk_widget_set_margin_bottom(hbox, 12);
+        
+        GtkWidget *icon = gtk_label_new(msgs[i][0]);
+        gtk_widget_set_size_request(icon, 40, 40);
+        
+        GtkWidget *info = gtk_box_new(GTK_ORIENTATION_VERTICAL, 3);
+        GtkWidget *name = gtk_label_new(NULL);
+        char name_markup[256];
+        snprintf(name_markup, sizeof(name_markup), 
+            "<b>%s</b>  <span size='small'>%s</span>",
+            msgs[i][1], msgs[i][3]);
+        gtk_label_set_markup(GTK_LABEL(name), name_markup);
+        gtk_widget_set_halign(name, GTK_ALIGN_START);
+        
+        GtkWidget *content = gtk_label_new(msgs[i][2]);
+        gtk_widget_set_halign(content, GTK_ALIGN_START);
+        gtk_label_set_ellipsize(GTK_LABEL(content), PANGO_ELLIPSIZE_END);
+        gtk_widget_set_size_request(content, 300, -1);
+        
+        gtk_box_pack_start(GTK_BOX(info), name, FALSE, FALSE, 0);
+        gtk_box_pack_start(GTK_BOX(info), content, FALSE, FALSE, 0);
+        
+        gtk_box_pack_start(GTK_BOX(hbox), icon, FALSE, FALSE, 0);
+        gtk_box_pack_start(GTK_BOX(hbox), info, TRUE, TRUE, 0);
+        
+        gtk_container_add(GTK_CONTAINER(row), hbox);
+        gtk_list_box_insert(GTK_LIST_BOX(list_box), row, -1);
+    }
+    
+    GtkWidget *scrolled = gtk_scrolled_window_new(NULL, NULL);
+    gtk_container_add(GTK_CONTAINER(scrolled), list_box);
+    
+    gtk_box_pack_start(GTK_BOX(vbox), toolbar, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), scrolled, TRUE, TRUE, 0);
+    
+    return vbox;
+}
+
+// 创建主窗口
+GtkWidget* create_main_window(void) {
+    main_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_title(GTK_WINDOW(main_window), "FindFriend - 同城交友·展会助手");
+    gtk_window_set_default_size(GTK_WINDOW(main_window), 1400, 800);
+    gtk_window_set_position(GTK_WINDOW(main_window), GTK_WIN_POS_CENTER);
+    
+    notebook = gtk_notebook_new();
+    gtk_notebook_set_tab_pos(GTK_NOTEBOOK(notebook), GTK_POS_TOP);
+    
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), 
+        create_message_view(), gtk_label_new("💬 消息"));
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), 
+        create_exhibition_panel(), gtk_label_new("🎪 展会"));
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), 
+        create_ticket_panel(), gtk_label_new("🎫 票务"));
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), 
+        create_transaction_panel(), gtk_label_new("💰 交易"));
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), 
+        create_gallery_view(), gtk_label_new("📸 相册"));
+    
+    gtk_widget_set_sensitive(notebook, FALSE);
+    
+    GtkWidget *menubar = gtk_menu_bar_new();
+    GtkWidget *user_menu = gtk_menu_new();
+    GtkWidget *user_item = gtk_menu_item_new_with_label("👤 未登录");
+    gtk_menu_item_set_submenu(GTK_MENU_ITEM(user_item), user_menu);
+    
+    GtkWidget *login_item = gtk_menu_item_new_with_label("登录");
+    g_signal_connect(login_item, "activate", G_CALLBACK(show_login_dialog), NULL);
+    gtk_menu_shell_append(GTK_MENU_SHELL(user_menu), login_item);
+    
+    gtk_menu_shell_append(GTK_MENU_SHELL(menubar), user_item);
+    
+    GtkWidget *vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), menubar, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), notebook, TRUE, TRUE, 0);
+    
+    gtk_container_add(GTK_CONTAINER(main_window), vbox);
+    
+    g_signal_connect(main_window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+    
+    return main_window;
+}

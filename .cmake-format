@@ -1,0 +1,28 @@
+# CMakeFormat配置文件
+
+# 基本设置
+line_width = 100
+indent = 4
+
+# 大小写规则
+case = lowercase
+
+# 命令排序
+sort = true
+
+# 换行设置
+max_subargs_per_line = 3
+separate_ctrl_name_with_space = true
+separate_fn_name_with_space = true
+
+# 空格设置
+blank_lines_before_commands = 1
+blank_lines_between_sections = 1
+
+# 注释设置
+comment_width = 80
+
+# 其他设置
+align_closing_brackets = true
+compact_lists = false
+break_preserve_comment = true

@@ -1,5 +1,0 @@
-/home/haiyan/汇总/FindFriendApp_v1.0/RedHat/build/CMakeFiles/FindFriendApp.dir
-/home/haiyan/汇总/FindFriendApp_v1.0/RedHat/build/CMakeFiles/edit_cache.dir
-/home/haiyan/汇总/FindFriendApp_v1.0/RedHat/build/CMakeFiles/rebuild_cache.dir
-/home/haiyan/汇总/FindFriendApp_v1.0/RedHat/build/CMakeFiles/FindFriendApp_autogen_timestamp_deps.dir
-/home/haiyan/汇总/FindFriendApp_v1.0/RedHat/build/CMakeFiles/FindFriendApp_autogen.dir

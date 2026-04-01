@@ -3,30 +3,32 @@
 
 ## 最新信息
 
-## 最新项目概述：
+## 项目状态 / Project Status
+所有功能代码已开发完成，**整体未经过严格测试**
+All features coded, overall **not fully tested yet**
 
-FindFriendApp 是一个多平台应用系统，支持 iOS、Debian、RedHat、Windows 和 Android 平台，提供用户定位、社交、计划管理、入场码生成、内部交易审核、照片传输等功能。
+## 开发语言 / Development Languages
+- C99：核心通用逻辑 / Common core logic
+- Java：安卓端 / Android platform
+- Swift：苹果iOS端 / iOS platform
 
-## 技术架构
+## 支持平台 / Supported Platforms
+- Android 安卓
+- iOS 苹果手机
+- Windows 桌面
+- macOS 苹果电脑
+- Debian / RedHat / Arch 主流Linux发行版（提供编译二进制）
+- Gentoo：仅源码 + Makefile 编译
+- LFS：仅源码 + Makefile 编译
 
-### 整体架构
-- **客户端-服务器架构**：各平台客户端与服务器端通过网络通信
-- **模块化设计**：每个平台采用模块化设计，确保代码可维护性和可扩展性
-- **本地数据库**：使用 SQLite 进行本地数据存储和用户认证
-- **跨平台通信**：支持不同平台间的设备发现和数据传输
+## 开发维护 / Developers & Maintainers
+个人维护：haiyanfurry
+协作团队：霓拓锋team / NTF-ZEYZ
 
-### 各平台技术栈
-
-| 平台 | 主要语言 | UI 框架 | 网络库 | 数据库 |
-|------|---------|--------|--------|--------|
-| iOS | Swift | UIKit | 原生网络 | SQLite |
-| Debian | C | GTK | 原生网络 | SQLite |
-| RedHat | C++ | Qt | 原生网络 | SQLite |
-| Windows | C++ | Qt | 原生网络 | SQLite |
-| Android | C++/Java | Android SDK | 原生网络 | SQLite |
-
-## 其他没有测试理论平台应该是可以跑的
-
+## 漏洞反馈 / Security Vulnerability Report
+如有安全漏洞或BUG，请邮件提交：
+If you find security bugs, please contact via email:
+[outlook_9A88BD6E385B5D40@outlook.com]
 
 
 ## 为什么要做仓库：

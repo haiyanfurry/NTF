@@ -15,7 +15,7 @@ All features coded, overall **not fully tested yet**
 ## 支持平台 / Supported Platforms
 - Android 安卓
 - iOS 苹果手机
-- Windows 桌面
+- Windows
 - macOS 苹果电脑
 - Debian / RedHat / Arch 主流Linux发行版（提供编译二进制）
 - Gentoo：仅源码 + Makefile 编译

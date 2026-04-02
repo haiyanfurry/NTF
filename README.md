@@ -120,7 +120,9 @@ NTF/
 ## 漏洞反馈 / Security Vulnerability Report
 如有安全漏洞或BUG，请邮件提交：
 If you find security bugs, please contact via email:
-[outlook_9A88BD6E385B5D40@outlook.com]
+[2752842448@qq.com]
+
+[Lu19275627399@outlook.com]
 
 
 ## 为什么要做仓库：

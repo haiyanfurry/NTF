@@ -7,7 +7,7 @@ If you find security vulnerabilities or bugs:
 如有发现安全漏洞、恶意代码隐患、攻击风险，请邮件反馈：
 
 Contact Email / 联系邮箱：
-[outlook_9A88BD6E385B5D40@outlook.com]
+[2752842448@qq.com]
 
 Maintainers / 维护人员：
 haiyanfurry / 霓拓锋team (NTF-ZEYZ)

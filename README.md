@@ -123,8 +123,6 @@ If you find security bugs, please contact via email:
 
 [2752842448@qq.com]
 
-[Lu19275627399@outlook.com]
-
 
 ## 为什么要做仓库：
 

@@ -1,3 +1,6 @@
+// 必须在所有头文件之前定义_GNU_SOURCE以使用strdup
+#define _GNU_SOURCE
+
 #include "chat_window.h"
 #include <stdio.h>
 #include <stdlib.h>

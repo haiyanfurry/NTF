@@ -4,6 +4,13 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <string.h>
+
+// 平台兼容性：strdup函数
+#if defined(__linux__) && !defined(_GNU_SOURCE)
+#define _GNU_SOURCE
+#endif
+#include <stdlib.h>
 
 #ifdef __cplusplus
 extern "C" {

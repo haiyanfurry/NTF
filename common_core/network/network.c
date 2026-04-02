@@ -1,3 +1,6 @@
+// 必须在所有头文件之前定义_GNU_SOURCE以使用strdup
+#define _GNU_SOURCE
+
 #include "network.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -278,7 +281,9 @@ int network_remove_server_ip(int index) {
     }
     
     free(server_ips[index]);
+    server_ips[index] = NULL;
     free(server_names[index]);
+    server_names[index] = NULL;
     
     // 移动剩余的服务器IP
     for (int i = index; i < server_ip_count - 1; i++) {

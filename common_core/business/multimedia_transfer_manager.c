@@ -1,3 +1,6 @@
+// 必须在所有头文件之前定义_GNU_SOURCE以使用strdup
+#define _GNU_SOURCE
+
 #include "multimedia_transfer_manager.h"
 #include "../network/network.h"
 #include <stdio.h>
@@ -41,8 +44,12 @@ static void multimedia_transfer_response_callback(void* user_data, int status, c
                 strftime(time_str, 20, "%Y-%m-%d %H:%M:%S", tm_info);
                 if (manager->media_files[i].transfer_time) {
                     free(manager->media_files[i].transfer_time);
+                    manager->media_files[i].transfer_time = NULL;
                 }
                 manager->media_files[i].transfer_time = strdup(time_str);
+                if (!manager->media_files[i].transfer_time) {
+                    fprintf(stderr, "Error allocating memory for transfer time\n");
+                }
             }
         }
     } else {
@@ -52,8 +59,12 @@ static void multimedia_transfer_response_callback(void* user_data, int status, c
                 manager->media_files[i].status = MEDIA_STATUS_FAILED;
                 if (manager->media_files[i].error_message) {
                     free(manager->media_files[i].error_message);
+                    manager->media_files[i].error_message = NULL;
                 }
                 manager->media_files[i].error_message = strdup("Transfer failed");
+                if (!manager->media_files[i].error_message) {
+                    fprintf(stderr, "Error allocating memory for error message\n");
+                }
             }
         }
     }
@@ -129,14 +140,18 @@ static void* multimedia_transfer_thread(void* arg) {
             manager->media_files[i].progress = 100.0;
             
             // 生成传输时间
-            time_t now = time(NULL);
-            struct tm* tm_info = localtime(&now);
-            char time_str[20];
-            strftime(time_str, 20, "%Y-%m-%d %H:%M:%S", tm_info);
-            if (manager->media_files[i].transfer_time) {
-                free(manager->media_files[i].transfer_time);
-            }
-            manager->media_files[i].transfer_time = strdup(time_str);
+        time_t now = time(NULL);
+        struct tm* tm_info = localtime(&now);
+        char time_str[20];
+        strftime(time_str, 20, "%Y-%m-%d %H:%M:%S", tm_info);
+        if (manager->media_files[i].transfer_time) {
+            free(manager->media_files[i].transfer_time);
+            manager->media_files[i].transfer_time = NULL;
+        }
+        manager->media_files[i].transfer_time = strdup(time_str);
+        if (!manager->media_files[i].transfer_time) {
+            fprintf(stderr, "Error allocating memory for transfer time\n");
+        }
         }
     }
     
@@ -364,15 +379,19 @@ bool multimedia_transfer_manager_stop_transfer(MultimediaTransferManager* manage
     manager->is_transferring = false;
     
     // 更新未完成的媒体文件状态
-    for (size_t i = 0; i < manager->media_count; i++) {
-        if (manager->media_files[i].status == MEDIA_STATUS_TRANSFERRING) {
-            manager->media_files[i].status = MEDIA_STATUS_FAILED;
-            if (manager->media_files[i].error_message) {
-                free(manager->media_files[i].error_message);
+        for (size_t i = 0; i < manager->media_count; i++) {
+            if (manager->media_files[i].status == MEDIA_STATUS_TRANSFERRING) {
+                manager->media_files[i].status = MEDIA_STATUS_FAILED;
+                if (manager->media_files[i].error_message) {
+                    free(manager->media_files[i].error_message);
+                    manager->media_files[i].error_message = NULL;
+                }
+                manager->media_files[i].error_message = strdup("Transfer stopped");
+                if (!manager->media_files[i].error_message) {
+                    fprintf(stderr, "Error allocating memory for error message\n");
+                }
             }
-            manager->media_files[i].error_message = strdup("Transfer stopped");
         }
-    }
     
     return true;
 }
@@ -390,8 +409,12 @@ bool multimedia_transfer_manager_cancel_transfer(MultimediaTransferManager* mana
             manager->media_files[i].status = MEDIA_STATUS_FAILED;
             if (manager->media_files[i].error_message) {
                 free(manager->media_files[i].error_message);
+                manager->media_files[i].error_message = NULL;
             }
             manager->media_files[i].error_message = strdup("Transfer cancelled");
+            if (!manager->media_files[i].error_message) {
+                fprintf(stderr, "Error allocating memory for error message\n");
+            }
             return true;
         }
     }

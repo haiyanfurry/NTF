@@ -1,9 +1,13 @@
+// 必须在所有头文件之前定义_GNU_SOURCE以使用strdup
+#define _GNU_SOURCE
+
 #include "exhibition_manager.h"
 #include "../network/network.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <stdint.h>
 // 展商响应回调函数
 static void exhibition_response_callback(void* user_data, int status, const uint8_t* data, size_t length) {
     if (!user_data) {

@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 // 检查是否以 root 权限运行
 int check_root_privileges(void) {

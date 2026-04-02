@@ -1,3 +1,6 @@
+// 必须在所有头文件之前定义_GNU_SOURCE以使用strdup
+#define _GNU_SOURCE
+
 #include "message_manager.h"
 #include "../network/network.h"
 #include <stdio.h>
@@ -27,9 +30,14 @@ static void message_response_callback(void* user_data, int status, const uint8_t
             // 模拟消息列表
             if (manager->messages) {
                 free(manager->messages);
+                manager->messages = NULL;
             }
             manager->message_count = 3;
             manager->messages = (Message*)malloc(sizeof(Message) * manager->message_count);
+            if (!manager->messages) {
+                fprintf(stderr, "Error allocating memory for messages\n");
+                return;
+            }
             if (manager->messages) {
                 // 消息 1
                 manager->messages[0].id = 1;
@@ -130,6 +138,7 @@ void message_manager_destroy(MessageManager* manager) {
         // 释放消息列表
         if (manager->messages) {
             free(manager->messages);
+            manager->messages = NULL;
         }
         free(manager);
     }
@@ -571,6 +580,7 @@ bool message_manager_cleanup_messages(MessageManager* manager, uint32_t user_id,
     // 释放旧消息列表
     if (manager->messages) {
         free(manager->messages);
+        manager->messages = NULL;
     }
     
     // 更新消息列表

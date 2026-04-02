@@ -1,3 +1,6 @@
+// 必须在所有头文件之前定义_GNU_SOURCE以使用strdup
+#define _GNU_SOURCE
+
 #include "user.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,24 +34,31 @@ void user_free(struct User* user) {
     if (user) {
         if (user->username) {
             free(user->username);
+            user->username = NULL;
         }
         if (user->nickname) {
             free(user->nickname);
+            user->nickname = NULL;
         }
         if (user->avatar) {
             free(user->avatar);
+            user->avatar = NULL;
         }
         if (user->signature) {
             free(user->signature);
+            user->signature = NULL;
         }
         if (user->exhibitionName) {
             free(user->exhibitionName);
+            user->exhibitionName = NULL;
         }
         if (user->exhibitionUrl) {
             free(user->exhibitionUrl);
+            user->exhibitionUrl = NULL;
         }
         if (user->emoji) {
             free(user->emoji);
+            user->emoji = NULL;
         }
     }
 }

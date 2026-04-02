@@ -1,3 +1,6 @@
+// 必须在所有头文件之前定义_GNU_SOURCE以使用strdup
+#define _GNU_SOURCE
+
 #include "photo_transfer_manager.h"
 #include "../network/network.h"
 #include <stdio.h>
@@ -44,8 +47,12 @@ static void photo_transfer_response_callback(void* user_data, int status, const 
                 strftime(time_str, 20, "%Y-%m-%d %H:%M:%S", tm_info);
                 if (manager->photos[i].transfer_time) {
                     free(manager->photos[i].transfer_time);
+                    manager->photos[i].transfer_time = NULL;
                 }
                 manager->photos[i].transfer_time = strdup(time_str);
+                if (!manager->photos[i].transfer_time) {
+                    fprintf(stderr, "Error allocating memory for transfer time\n");
+                }
             }
         }
     } else {
@@ -55,8 +62,12 @@ static void photo_transfer_response_callback(void* user_data, int status, const 
                 manager->photos[i].status = PHOTO_STATUS_FAILED;
                 if (manager->photos[i].error_message) {
                     free(manager->photos[i].error_message);
+                    manager->photos[i].error_message = NULL;
                 }
                 manager->photos[i].error_message = strdup("Transfer failed");
+                if (!manager->photos[i].error_message) {
+                    fprintf(stderr, "Error allocating memory for error message\n");
+                }
             }
         }
     }
@@ -103,14 +114,18 @@ static void* photo_transfer_thread(void* arg) {
             manager->photos[i].progress = 100.0;
             
             // 生成传输时间
-            time_t now = time(NULL);
-            struct tm* tm_info = localtime(&now);
-            char time_str[20];
-            strftime(time_str, 20, "%Y-%m-%d %H:%M:%S", tm_info);
-            if (manager->photos[i].transfer_time) {
-                free(manager->photos[i].transfer_time);
-            }
-            manager->photos[i].transfer_time = strdup(time_str);
+        time_t now = time(NULL);
+        struct tm* tm_info = localtime(&now);
+        char time_str[20];
+        strftime(time_str, 20, "%Y-%m-%d %H:%M:%S", tm_info);
+        if (manager->photos[i].transfer_time) {
+            free(manager->photos[i].transfer_time);
+            manager->photos[i].transfer_time = NULL;
+        }
+        manager->photos[i].transfer_time = strdup(time_str);
+        if (!manager->photos[i].transfer_time) {
+            fprintf(stderr, "Error allocating memory for transfer time\n");
+        }
         }
     }
     
@@ -321,15 +336,19 @@ bool photo_transfer_manager_stop_transfer(PhotoTransferManager* manager) {
     manager->is_transferring = false;
     
     // 更新未完成的照片状态
-    for (size_t i = 0; i < manager->photo_count; i++) {
-        if (manager->photos[i].status == PHOTO_STATUS_TRANSFERRING) {
-            manager->photos[i].status = PHOTO_STATUS_FAILED;
-            if (manager->photos[i].error_message) {
-                free(manager->photos[i].error_message);
+        for (size_t i = 0; i < manager->photo_count; i++) {
+            if (manager->photos[i].status == PHOTO_STATUS_TRANSFERRING) {
+                manager->photos[i].status = PHOTO_STATUS_FAILED;
+                if (manager->photos[i].error_message) {
+                    free(manager->photos[i].error_message);
+                    manager->photos[i].error_message = NULL;
+                }
+                manager->photos[i].error_message = strdup("Transfer stopped");
+                if (!manager->photos[i].error_message) {
+                    fprintf(stderr, "Error allocating memory for error message\n");
+                }
             }
-            manager->photos[i].error_message = strdup("Transfer stopped");
         }
-    }
     
     return true;
 }
@@ -347,8 +366,12 @@ bool photo_transfer_manager_cancel_transfer(PhotoTransferManager* manager, const
             manager->photos[i].status = PHOTO_STATUS_FAILED;
             if (manager->photos[i].error_message) {
                 free(manager->photos[i].error_message);
+                manager->photos[i].error_message = NULL;
             }
             manager->photos[i].error_message = strdup("Transfer cancelled");
+            if (!manager->photos[i].error_message) {
+                fprintf(stderr, "Error allocating memory for error message\n");
+            }
             return true;
         }
     }

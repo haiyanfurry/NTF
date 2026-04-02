@@ -1,3 +1,6 @@
+// 必须在所有头文件之前定义_GNU_SOURCE以使用strdup
+#define _GNU_SOURCE
+
 #include "user_manager.h"
 #include "../network/network.h"
 #include <stdio.h>

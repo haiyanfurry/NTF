@@ -1,0 +1,32 @@
+{
+    "name": "FindFriend Theme",
+    "version": "1.0.0",
+    "description": "FindFriend Application Theme Configuration",
+    "theme_type": "default",
+    "colors": {
+        "primary": "#4CAF50",
+        "primary_hover": "#45a049",
+        "secondary": "#2196F3",
+        "danger": "#f44336",
+        "success": "#4CAF50",
+        "warning": "#ff9800",
+        "error": "#f44336",
+        "info": "#2196F3"
+    },
+    "background": {
+        "main": "#f5f5f5",
+        "surface": "#ffffff",
+        "sidebar": "#ffffff"
+    },
+    "text": {
+        "primary": "#333333",
+        "secondary": "#666666"
+    },
+    "border": {
+        "default": "#e0e0e0",
+        "focus": "#4CAF50"
+    },
+    "font": {
+        "family": "Microsoft YaHei, PingFang SC, Helvetica Neue, Arial, sans-serif"
+    }
+}

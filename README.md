@@ -308,6 +308,27 @@ quit                          # 退出
 
 ---
 
-**版本**: 4.0
+**版本**: 5.0
 **构建环境**: Fedora 43, GCC 15.2.1, CMake 3.31.11
 **最后更新**: 2026-04-26
+
+## 开发维护 / Developers & Maintainers
+个人维护：haiyanfurry
+协作团队：霓拓锋team / NTF-ZEYZ
+
+## 漏洞反馈 / Security Vulnerability Report
+如有安全漏洞或BUG，请邮件提交：
+If you find security bugs, please contact via email:
+
+[2752842448@qq.com]
+
+## 说明
+
+```
+目前开发者现在就几乎一个人
+因为我的另一个朋友他要备战中考
+所以只有我一个人了
+然后就是我现在因为本身编程能力并不强
+所以用到了ChatGPT和Trae两个ai
+所以可能会有bug这些比较多的地方
+```

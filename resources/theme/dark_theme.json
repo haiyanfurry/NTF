@@ -1,0 +1,32 @@
+{
+    "name": "FindFriend Dark Theme",
+    "version": "1.0.0",
+    "description": "FindFriend Dark Theme Configuration",
+    "theme_type": "dark",
+    "colors": {
+        "primary": "#4CAF50",
+        "primary_hover": "#66BB6A",
+        "secondary": "#42A5F5",
+        "danger": "#EF5350",
+        "success": "#66BB6A",
+        "warning": "#FFA726",
+        "error": "#EF5350",
+        "info": "#42A5F5"
+    },
+    "background": {
+        "main": "#1a1a1a",
+        "surface": "#2d2d2d",
+        "sidebar": "#252525"
+    },
+    "text": {
+        "primary": "#e0e0e0",
+        "secondary": "#a0a0a0"
+    },
+    "border": {
+        "default": "#404040",
+        "focus": "#4CAF50"
+    },
+    "font": {
+        "family": "Microsoft YaHei, PingFang SC, Helvetica Neue, Arial, sans-serif"
+    }
+}

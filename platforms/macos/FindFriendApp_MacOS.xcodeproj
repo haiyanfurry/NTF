@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+  <ProjectDirPath>.</ProjectDirPath>
+  <Targets>
+    <Target>
+      <Name>FindFriendApp_MacOS</Name>
+      <Type>Application</Type>
+      <BuildSettings>
+        <SwiftVersion>5.0</SwiftVersion>
+        <DeploymentTarget>10.15</DeploymentTarget>
+      </BuildSettings>
+      <Sources>
+        <SourceFile>AppDelegate.swift</SourceFile>
+        <SourceFile>SceneDelegate.swift</SourceFile>
+        <SourceFile>ContentView.swift</SourceFile>
+        <SourceFile>LoginView.swift</SourceFile>
+        <SourceFile>MainView.swift</SourceFile>
+        <SourceFile>MapView.swift</SourceFile>
+        <SourceFile>FriendListView.swift</SourceFile>
+        <SourceFile>ChatView.swift</SourceFile>
+        <SourceFile>MineView.swift</SourceFile>
+        <SourceFile>GameView.swift</SourceFile>
+        <SourceFile>FindFriendCoreBridge.swift</SourceFile>
+      </Sources>
+      <Resources>
+        <ResourceFile>Info.plist</ResourceFile>
+        <ResourceFile>map_template.html</ResourceFile>
+      </Resources>
+      <Frameworks>
+        <Framework>SwiftUI</Framework>
+        <Framework>Foundation</Framework>
+        <Framework>CoreGraphics</Framework>
+      </Frameworks>
+    </Target>
+  </Targets>
+</Project>

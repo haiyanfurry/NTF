@@ -1,0 +1,16 @@
+[workspace]
+members = [
+    "rust_network",
+    "rust_crypto",
+    "rust_security",
+]
+resolver = "2"
+
+[profile.release]
+opt-level = "z"  # 优化大小
+lto = true       # 链接时优化
+codegen-units = 1
+strip = true     # 移除调试符号
+
+[profile.dev]
+opt-level = 0    # 优化等级 0（快速编译）

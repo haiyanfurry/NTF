@@ -1,0 +1,30 @@
+[package]
+name = "ff_security"
+version = "0.1.0"
+edition = "2021"
+authors = ["FindFriend Team"]
+description = "FindFriend Security Module - Memory encryption, device fingerprint, MITM protection"
+
+[lib]
+name = "ff_security"
+crate-type = ["staticlib", "cdylib"]
+
+[dependencies]
+rand = "0.8"
+rand_chacha = "0.3"
+sha2 = "0.10"
+hmac = "0.12"
+aes = "0.8"
+aes-gcm-siv = "0.11"
+crc64fast = "1.1"
+zeroize = { version = "1.6", features = ["zeroize_derive"] }
+getrandom = "0.2"
+libc = "0.2"
+log = "0.4"
+thiserror = "1.0"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
